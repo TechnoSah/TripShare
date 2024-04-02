@@ -108,13 +108,13 @@ onMounted(() => {
 
             title.value = "You've arrived!"
             message.value = `Hope you enjoyed your ride with ${e.trip.driver.user.name}`
-
+            
             setTimeout(() => {
                 trip.reset()
                 location.reset()
                 
                 router.push({
-                    name: 'landing'
+                    name: '/'
                 })
             }, 10000)
         })

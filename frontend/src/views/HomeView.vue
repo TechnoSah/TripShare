@@ -2,34 +2,35 @@
   <div>
     <!-- Navigation bar -->
     <nav class="bg-blue-500 p-4">
-  <div class="container mx-auto flex justify-between items-center">
-    <router-link to="/" class="text-white text-xl font-bold">TripShare</router-link>
-    <div class="hidden md:flex space-x-4 text-white"> <!-- Hide on small screens -->
-      <router-link to="/" class="hover:underline">Home</router-link>
-      <router-link to="#" class="hover:underline">Login</router-link>
-      <!-- Add more navigation links as needed -->
-    </div>
-    <div class="md:hidden"> <!-- Show on small screens -->
-      <!-- Hamburger icon -->
-      <button @click="toggleMenu" class="text-white focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-      </button>
-    </div>
-  </div>
-  <!-- Responsive menu -->
-  <transition name="fade">
-  <div v-if="isMenuOpen" class="md:hidden absolute top-12 right-0 left-50 w-full bg-blue-500 z-10">
-  <div class="container mx-auto py-4">
-    <router-link to="/" class="block text-white py-2">Home</router-link>
-    <router-link to="#" class="block text-white py-2">Login</router-link>
-      <!-- Add more navigation links as needed -->
-    </div>
-  </div>
-</transition>
-</nav>
-
+      <div class="container mx-auto flex justify-between items-center">
+        <router-link to="/" class="text-white text-xl font-bold">TripShare</router-link>
+        <div class="hidden md:flex space-x-4 text-white"> <!-- Hide on small screens -->
+          <router-link to="/" class="hover:underline">Home</router-link>
+          <!-- Add the logout router-link here -->
+          <router-link to="#" class="hover:underline" @click="logout">Logout</router-link>
+          <!-- Add more navigation links as needed -->
+        </div>
+        <div class="md:hidden"> <!-- Show on small screens -->
+          <!-- Hamburger icon -->
+          <button @click="toggleMenu" class="text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Responsive menu -->
+      <transition name="fade">
+        <div v-if="isMenuOpen" class="md:hidden absolute top-12 right-0 left-50 w-full bg-blue-500 z-10">
+          <div class="container mx-auto py-4">
+            <router-link to="/" class="block text-white py-2">Home</router-link>
+            <!-- Add the logout router-link here -->
+            <router-link to="/login" class="block text-white py-2" @click="logout">Logout</router-link>
+            <!-- Add more navigation links as needed -->
+          </div>
+        </div>
+      </transition>
+    </nav>
 
     <!-- Main content -->
     <main class="container mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-center">
@@ -55,7 +56,9 @@
 </template>
 
 <script>
-  export default {
+import { useRouter } from 'vue-router';
+
+export default {
   data() {
     return {
       isMenuOpen: false // Initialize menu state
@@ -63,12 +66,22 @@
   },
   methods: {
     toggleMenu() {
-    console.log('toggleMenu method called');
-    this.isMenuOpen = !this.isMenuOpen;
+      console.log('toggleMenu method called');
+      this.isMenuOpen = !this.isMenuOpen;
+    },
+    logout() {
+      // Clear user authentication status
+      // Example: Removing tokens from localStorage or session storage
+      localStorage.removeItem('accessToken');
+      
+      // Redirect to the login page or another appropriate page
+      const router = useRouter();
+      router.push('/login');
+
+      console.log('Logout method called');
     }
   }
 }
-
 </script>
 
 <style scoped>
