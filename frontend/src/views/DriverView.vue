@@ -1,6 +1,7 @@
 <template>
+    
     <div class="pt-16">
-        <h1 class="text-3xl font-semibold mb-4">Driver and Car details</h1>
+        <h1 class="text-3xl text-white font-semibold mb-4">Driver and Car details</h1>
         <form action="#" @submit.prevent="handleSaveDriver">
             <div class="overflow-hidden shadow sm:rounded-md max-w-sm mx-auto text-left">
                 <div class="bg-white px-4 py-5 sm:p-6">
@@ -13,7 +14,7 @@
                             class="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-black focus:outline-none">
                     </div>
                     <div class="mt-2">
-                        <input type="text" name="make" id="make" v-model="driverDetails.make" placeholder="Make"
+                        <input type="text" name="make" id="make" v-model="driverDetails.make" placeholder="Brand"
                             class="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-black focus:outline-none">
                     </div>
                     <div class="mt-2">

@@ -1,6 +1,7 @@
 <template>
+    
     <div class="pt-16">
-        <h1 class="text-3xl font-semibold mb-4">{{ title }}</h1>
+        <h1 class="text-3xl text-white font-semibold mb-4">{{ title }}</h1>
         <div>
             <div class="overflow-hidden shadow sm:rounded-md max-w-sm mx-auto text-left" v-if="!trip.is_complete">
                 <div class="bg-white px-4 py-5 sm:p-6">
@@ -12,7 +13,7 @@
                         </GMapMap>
                     </div>
                     <div class="mt-2">
-                        <p class="text-xl">Going to <strong>pick up a passenger</strong></p>
+                        <p class="text-xl text-white">Going to <strong>pick up a passenger</strong></p>
                     </div>
                 </div>
                 <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
@@ -27,8 +28,8 @@
                 </div>
             </div>
             <div class="overflow-hidden shadow sm:rounded-md max-w-sm mx-auto text-left" v-else>
-                <div class="bg-white px-4 py-5 sm:p-6">
-                    Pay to the Driver!
+                <div class="bg-white text-bold px-4 py-5 sm:p-6 bold">
+                    Ride Complete!
                     <Tada />
                 </div>
             </div>

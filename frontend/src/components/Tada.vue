@@ -1,13 +1,13 @@
 <template>
     <div class="mx-auto w-48 h-48 flex items-center justify-center">
-        <span class="tada">🎉</span>
+        <span class="tada">✅</span>
     </div>
 </template>
 <style>
 .tada {
     font-size: 2rem;
     display: block;
-    animation: wiggle 2s cubic-bezier(1, 0, 0, 1) 1 0s normal forwards;
+    animation: wiggle 2s cubic-bezier(1, 0, 0, 1) 1 1s normal forwards;
 }
 
 @keyframes wiggle {

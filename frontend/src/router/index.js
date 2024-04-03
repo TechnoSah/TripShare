@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import fastDeepEqual from 'fast-deep-equal';
 import HomeView from '@/views/HomeView.vue';
+import AboutView from '@/views/AboutView.vue';
 import LoginView from '@/views/LoginView.vue'
 import LandingView from '@/views/LandingView.vue'
 import LocationView from '@/views/LocationView.vue'
@@ -9,6 +10,10 @@ import TripView from '@/views/TripView.vue'
 import StandbyView from '@/views/StandbyView.vue';
 import DriverView from '@/views/DriverView.vue';
 import DrivingView from '@/views/DrivingView.vue';
+import Payment from '@/views/Payment.vue';
+
+
+
 
 import axios from 'axios';
 
@@ -26,7 +31,11 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     }, 
-    
+    {
+      path: '/about',
+      name: 'about',
+      component: AboutView
+    }, 
     {
       path: '/landing',
       name: 'landing',
@@ -61,6 +70,11 @@ const router = createRouter({
       path: '/driving',
       name: 'driving',
       component: DrivingView
+    },
+    {
+      path: '/payment',
+      name: 'payment',
+      component: Payment
     }
   ]
 })
@@ -96,7 +110,6 @@ const checkTokenAuthenticity = () => {
     })
   })
 }
-
 
 
 export default router

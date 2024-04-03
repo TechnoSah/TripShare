@@ -1,6 +1,7 @@
 <template>
+    
     <div class="pt-16">
-        <h1 class="text-3xl font-semibold mb-4">{{ title }}</h1>
+        <h1 class="text-3xl text-white font-semibold mb-4">{{ title }}</h1>
         <div v-if="!trip.id" class="mt-8 flex justify-center">
             <Loader />
         </div>
@@ -12,7 +13,7 @@
                             style="width:100%; height: 256px;"></GMapMap>
                     </div>
                     <div class="mt-2">
-                        <p class="text-xl">Going to <strong>{{ trip.destination_name }}</strong></p>
+                        <p class="text-xl text-white">Going to <strong>{{ trip.destination_name }}</strong></p>
                     </div>
                 </div>
                 <div class="flex justify-between bg-gray-50 px-4 py-3 text-right sm:px-6">
@@ -47,6 +48,7 @@ const router = useRouter()
 const handleDeclineTrip = () => {
     trip.reset()
     title.value = 'Waiting for ride request...'
+    
 }
 
 const handleAcceptTrip = () => {

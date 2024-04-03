@@ -1,6 +1,7 @@
 <template>
+    
     <div class="pt-16">
-        <h1 class="text-3xl font-semibold mb-4">{{ title }}</h1>
+        <h1 class="text-3xl text-white font-semibold mb-4">{{ title }}</h1>
         <div>
             <div class="overflow-hidden shadow sm:rounded-md max-w-sm mx-auto text-left">
                 <div class="bg-white px-4 py-5 sm:p-6">
@@ -12,7 +13,7 @@
                         </GMapMap>
                     </div>
                 </div>
-                <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">
+                <div class="bg-gray-50 text-white px-4 py-3 text-right sm:px-6">
                     <span>{{ message }}</span>
                 </div>
             </div>
@@ -83,9 +84,10 @@ onMounted(() => {
     echo.channel(`passenger_${trip.user_id}`)
         .listen('TripAccepted', (e) => {
             trip.$patch(e.trip)
-
+            
             title.value = "A driver is on the way!"
             message.value = `${e.trip.driver.user.name} is coming in a ${e.trip.driver.year} ${e.trip.driver.color} ${e.trip.driver.make} ${e.trip.driver.model} with a license plate #${e.trip.driver.license_plate}`
+            
         })
         .listen('TripLocationUpdated', (e) => {
             trip.$patch(e.trip)
@@ -114,7 +116,7 @@ onMounted(() => {
                 location.reset()
                 
                 router.push({
-                    name: '/'
+                    name: 'payment'
                 })
             }, 10000)
         })
