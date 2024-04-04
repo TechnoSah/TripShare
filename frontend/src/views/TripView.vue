@@ -116,7 +116,7 @@ onMounted(() => {
                 location.reset()
                 
                 router.push({
-                    name: 'payment'
+                    name: 'landing'
                 })
             }, 10000)
         })

@@ -6,7 +6,7 @@
                 <div class="bg-white px-4 py-5 sm:p-6">
                     <div>
                         <input type="text" v-maska data-maska="+91 ##########" v-model="credentials.phone" name="phone" id="phone" placeholder="+91 1234567890" required class="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-black focus:outline-none">
-                        <div v-if="!isPhoneValid" class="text-red-500">Invalid phone number</div>
+                        
                     </div>
                 </div>
                 <div class="bg-gray-50 px-4 py-3 text-right sm:px-6">

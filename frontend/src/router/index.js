@@ -10,12 +10,13 @@ import TripView from '@/views/TripView.vue'
 import StandbyView from '@/views/StandbyView.vue';
 import DriverView from '@/views/DriverView.vue';
 import DrivingView from '@/views/DrivingView.vue';
-import Payment from '@/views/Payment.vue';
+import PaymentOption from '@/views/PaymentOption.vue';
 
 
 
 
 import axios from 'axios';
+
 
 
 const router = createRouter({
@@ -74,7 +75,7 @@ const router = createRouter({
     {
       path: '/payment',
       name: 'payment',
-      component: Payment
+      component: PaymentOption
     }
   ]
 })
